@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>THE ULTIMATE PROTOCOL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Main Game Layer -->
+        <canvas id="gameCanvas" width="400" height="650"></canvas>
+        
+        <!-- Engrained Target Objective Notification (Reveals in background cleanly) -->
+        <div id="target-goal-hud" class="hidden">Score 10 points</div>
+        
+        <div id="unlock-bg-notif" class="hidden"> Secret UNLOCKED</div>
+
+        <div class="ui-overlay">
+            <!-- HUD AREA -->
+            <div id="live-header">
+                <div class="hud-top-row">
+                    <div id="score-display">0</div>
+                    <div class="highscore-box">HI-SCORE: <span id="highscore-display">0</span></div>
+                </div>
+            </div>
+            
+            <!-- Speech bubble container anchored closely to stickman coordinate baseline space -->
+            <div id="speech-bubble-container">
+                <div id="speech-bubble"></div>
+            </div>
+        </div>
+
+        <!-- COUNTDOWN SYSTEM -->
+        <div id="countdown-screen">3</div>
+
+        <!-- MENU / MODAL ENGINE -->
+        <div id="menu-modal" class="modal-screen hidden">
+            <h2 id="menu-title" class="modal-title">THE ULTIMATE PROTOCOL</h2>
+            <p id="menu-desc" class="modal-desc">Gravity Subversion & Sarcasm Experiment</p>
+            
+            <div class="modal-btn-group">
+                <select id="difficulty-select" class="difficulty-select interactive">
+                    <option value="1">EASY MODE</option>
+                    <option value="2" selected>MEDIUM MODE</option>
+                    <option value="3">HARD MODE</option>
+                </select>
+                <button id="menu-btn" class="btn-action interactive">RESTART</button>
+                <button id="menu-letter-btn" class="btn-action btn-reward interactive hidden">SECRET Unlocked</button>
+            </div>
+        </div>
+
+        <!-- BIRTHDAY OVERLAY PORTAL -->
+        <div id="letter-screen" class="hidden">
+            <canvas id="birthdayCanvas"></canvas>
+            
+            <div class="celebration-zone">
+                <!-- VERIFY MATRIX -->
+                <div id="verify-stage" class="interactive">
+                    <h2 class="verify-title">UNLOCK</h2>
+                    <p class="verify-desc">hmm, how do i address u! .</p>
+                    <input type="text" id="identity-input" placeholder="ENTER ur Name..." autocomplete="off" capitalize="off">
+                    <button id="submit-identity-btn" class="btn-verify">SUBMIT</button>
+                    <p id="verify-error" class="error-msg hidden">yikes! Sorry but no entry for u.</p>
+                </div>
+
+                <!-- UNFOLDED MEMORY -->
+                <div id="unfolded-stage" class="hidden">
+                    <div id="cake-display-wrapper">
+                        <div class="candle">
+                            <div class="flame-element interactive">🔥</div>
+                            <div class="flame-hint">Blow out the Candle</div>
+                        </div>
+                        <div class="cake-tier tier-top"></div>
+                        <div class="cake-tier tier-bottom"></div>
+                        <div class="cake-plate"></div>
+                    </div>
+
+                    <div id="letter-text-container" class="letter-content"></div>
+                    <button id="close-letter-btn" class="btn-close-portal interactive">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
